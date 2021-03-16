@@ -1,3 +1,4 @@
+package mammals;
 
 public class Gorilla extends Mammal {
 

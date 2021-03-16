@@ -1,3 +1,4 @@
+package mammals;
 
 public class Mammal {
 	protected int energyLevel = 100;
