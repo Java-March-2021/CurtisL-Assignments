@@ -2,7 +2,9 @@ package com.example.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
@@ -15,7 +17,7 @@ public class Application {
 	}
 	
 	//1.Annotation
-	@RequestMapping("/")
+	@RequestMapping("/hello")
 	//3/Method that maps to the request route above
 	public String hello() {
 		return"Hello Client. How are you doing?";
@@ -25,5 +27,12 @@ public class Application {
 	public String random() {
 		return "This is the random method being called";
 	}
+	
+	@RequestMapping("/search")
+		public String index(@RequestParam(value = "q", required=false) String searchQuery, Model model) {
+			model.addAttribute(searchQuery);
+			return "index.jsp";
+		}
+	
 
 }
