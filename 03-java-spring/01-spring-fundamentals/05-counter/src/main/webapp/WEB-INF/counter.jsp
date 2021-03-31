@@ -8,9 +8,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h2>counter page</h2>
-	<p>You have visited the page <c:out value="${day}"/> times</p>
-	<a href="index.jsp">Test another visit</a>
-	<form method=Post action="/counter"></form>
+	
+	<p>You have visited <a href="/">http://localhost:8080/</a> <c:out value="${count}"/> times.</p>
+	
+	<form method=Post action="/">
+	<a href="/">Test another visit?</a></form>
 </body>
 </html>

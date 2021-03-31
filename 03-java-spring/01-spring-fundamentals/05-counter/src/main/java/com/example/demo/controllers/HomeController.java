@@ -10,30 +10,29 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller	
 public class HomeController {
 	
-	@RequestMapping("/")
+	HttpSession session;
+	
+	@RequestMapping("")
 	public String index(HttpSession session) {
-		if(session.getAttribute("count") == null) {
-			session.setAttribute("count", 0);
+		int iterate = 1;
+		if(session.getAttribute("count")==null) {	
+			session.setAttribute("count", 1);
+			
+		} else {
+			iterate+= (Integer) session.getAttribute("count");
+			session.setAttribute("count", iterate);
 		}
 		return "index.jsp";
 	}
+
 	
-	public int count(HttpSession session) {
-		
-		Integer current =(Integer) session.getAttribute("count");  
-		
-		current++;
-		
-		session.setAttribute("count", current);
-		return current;
+	
+	@RequestMapping("/counter")
+	public String counter(HttpSession session,Model model) {
+		model.addAttribute("count",session.getAttribute("count"));
+		return"counter.jsp";
 	}
 	
-	@GetMapping("/counter")
-	public String counter(HttpSession sesh,Model model) {
-		Integer current =(Integer) sesh.getAttribute("count");
-		current++;
-		model.addAttribute("count",current);
-		return "redirect:/";
-	}
+	
 
 }
