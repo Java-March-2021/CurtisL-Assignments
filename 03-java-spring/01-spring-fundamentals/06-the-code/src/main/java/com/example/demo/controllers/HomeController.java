@@ -20,7 +20,7 @@ public class HomeController {
 			return"code.jsp";
 
 		}else {
-			redirect.addFlashAttribute("error","You must train harder");
+			redirect.addFlashAttribute("error","You must train harder!");
 			return"redirect:/";
 		}
 	}
