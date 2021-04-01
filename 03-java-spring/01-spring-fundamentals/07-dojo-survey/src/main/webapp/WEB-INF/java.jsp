@@ -23,7 +23,7 @@
 		</div>
 		<div>
 			<label>Favorite language:</label>
-			<c:out value="${lang}" />
+			<c:out value="${lang}" />!!!
 		</div>
 		<div class="space">
 			<label>Comment:</label>
