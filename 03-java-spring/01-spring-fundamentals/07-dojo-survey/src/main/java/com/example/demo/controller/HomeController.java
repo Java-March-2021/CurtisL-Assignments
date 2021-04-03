@@ -27,6 +27,7 @@ public class HomeController {
 		model.addAttribute("Location", Location);
 		model.addAttribute("lang", lang);
 		model.addAttribute("Comment", comment);
+		
 
 		if (lang.equals("Java")) {
 			return "java.jsp";

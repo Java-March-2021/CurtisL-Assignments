@@ -1,0 +1,81 @@
+@charset "ISO-8859-1";
+
+
+div {
+	display: flex;
+	flex-direction: column;
+}
+
+h2 {
+	flex-grow: 1;
+	font-size: largest;
+	padding: 0px;
+	max-width: 10%;
+	padding-left: 3px;
+	border: 2px solid black;
+}
+
+h3 {
+	flex-grow: 0;
+	width: fit-content;
+	margin-right: 5px;
+}
+
+.share {
+	display: flex;
+	flex-direction:row;
+	justify-content: flex-start;
+	align-items: center;
+	
+	
+}
+
+form {
+	text-align: center;
+	padding: 1px;
+	border: 2px solid black;
+	min-width: 140px;
+	max-width: 140px;
+	max-height: 130px;
+}
+
+form p {
+	font-size: larger;
+}
+
+.space {
+	display: flex;
+	flex-direction:row;
+	align-items: center;
+	justify-content: space-between;
+}
+
+textarea {
+	border: 2px solid black;
+}
+
+.wrapper {
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+.casino {
+	font-size: large;
+	margin:0px;
+}
+
+.activities {
+	border: 2px solid black;
+	max-height: 250px;
+	overflow-y: auto;
+
+}
+
+.red {
+	color: red;
+}
+
+.green {
+	color: green;
+}
+
