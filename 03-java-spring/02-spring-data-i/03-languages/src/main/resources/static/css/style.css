@@ -1,0 +1,29 @@
+* {
+	margin: 0 auto;
+	
+}
+
+
+
+.box {
+	display: flex;
+	flex-direction: column;
+	
+	
+}
+
+
+
+
+
+table, td {
+	width: 80%;
+	border: 2px solid black;
+}
+
+a {
+	margin: 2px 2px;
+}
+
+
+
