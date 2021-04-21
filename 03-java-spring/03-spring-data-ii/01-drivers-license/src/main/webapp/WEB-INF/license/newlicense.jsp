@@ -19,6 +19,7 @@
 				</c:forEach>
 			</form:select>
 		</p>
+		
 		<p>
 			<form:label path="state">State:</form:label>
 			<form:errors path="state" />
@@ -76,6 +77,7 @@
 				<option value="WY">WY</option>
 			</form:select>
 		</p>
+				
 		<p>
 			<form:label path="expiration_date">Expiration Date:</form:label>
 			<form:errors path="expiration_date" />

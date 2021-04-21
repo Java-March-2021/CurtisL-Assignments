@@ -13,46 +13,45 @@ import com.example.demo.repositories.LicenseRepository;
 
 @Service
 public class PersonService implements PersonRepository {
-	
+
 	@Autowired
 	PersonRepository pRepo;
-	
+
 	@Autowired
 	LicenseRepository lRepo;
-	
-	public List<Person> Unlicensed(){
+
+	public List<Person> Unlicensed() {
 		return pRepo.findByLicenseIdIsNull();
-		
+
 	}
-	
+
 	public License createLicense(License license) {
 		license.setNumber(generateNumber());
-		
+
 		return lRepo.save(license);
 	}
-	
+
 	public String generateNumber() {
 		List<License> list = lRepo.findAllByOrderByNumberDesc();
 		int number;
-		
-		if (list.isEmpty()||(list.get(0)==null)) {
-			String num = "1000000";
+
+		String num = "0000001"; // 0000001 1
+
+		if (list.isEmpty() || (list.get(0) == null)) {
+
 			return num;
-		}else {
-		
-		License l1 = list.get(0);
-		number = Integer.parseInt(l1.getNumber());
-		number++;
-		String num = String.valueOf(number);
-		return num;
+		} else {
+
+			String num1 = "1".concat(list.get(0).getNumber());
+			number = Integer.parseInt(num1);
+			number++;
+			String result = String.valueOf(number);
+
+			return result.substring(1);
 		}
-		
+
 	}
-	
-	
-	
-	
-	
+
 //Person Repo
 	@Override
 	public <S extends Person> S save(S entity) {
@@ -99,13 +98,13 @@ public class PersonService implements PersonRepository {
 	@Override
 	public void deleteById(Long id) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void delete(Person entity) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
@@ -130,9 +129,5 @@ public class PersonService implements PersonRepository {
 		// TODO Auto-generated method stub
 		return lRepo.findByPersonId(id);
 	}
-
-	
-	
-	
 
 }
