@@ -1,11 +1,15 @@
 package com.example.demo.services;
 
+import java.util.List;
 import java.util.Optional;
+
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.models.Dojo;
+import com.example.demo.models.Ninja;
 import com.example.demo.repositories.DojoRepository;
 import com.example.demo.repositories.NinjaRepository;
 
@@ -83,4 +87,23 @@ public class DojoServices implements DojoRepository {
 		dRepo.deleteAll();
 	}
 
+	public void save(@Valid Ninja ninja) {
+		// TODO Auto-generated method stub
+		nRepo.save(ninja);
+	}
+	
+	public Optional<Ninja> findNinja(Long id) {
+		return nRepo.findById(id);
+	}
+
+	public Long countNinjas(Dojo dojo) {
+		return nRepo.countByDojoLike(dojo);
+	}
+
+	public List<Ninja> findAllByDojo(Dojo dojo) {
+		// TODO Auto-generated method stub
+		return nRepo.findAllByDojoLike(dojo);
+	}
+
+	
 }

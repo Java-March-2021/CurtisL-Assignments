@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,6 +8,8 @@
 </head>
 <body>
 	<h1>Welcome to the Dojos</h1>
+	<a href="/newNinja">Join Dojo</a>
 	<a href="/newDojo">New Dojo?</a>
+	<a href="/dojoList">More locations</a>
 </body>
 </html>

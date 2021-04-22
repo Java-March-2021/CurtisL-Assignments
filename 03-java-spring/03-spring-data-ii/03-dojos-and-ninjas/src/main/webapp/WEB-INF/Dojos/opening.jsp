@@ -10,7 +10,8 @@
 <body>
 <h1><c:out value="${dojo.name }"/></h1>
 <h2>Grand Opening of Coding Dojo's <c:out value="${dojo.name }"/> location</h2>
-<a href="Ninjas/newNinja">Add students</a>
-<a href="Dojos/dojoList">More locations</a>
+<a href="/newNinja">Join Dojo</a>
+
+<a href="/dojoList">More locations</a>
 </body>
 </html>
