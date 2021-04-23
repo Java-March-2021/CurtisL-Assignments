@@ -1,0 +1,10 @@
+@charset "ISO-8859-1";
+
+.split {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: baseline;
+}
+
